@@ -74,7 +74,7 @@
         <td>http://localhost:8080/todos/overdue</td>
         <td></td>
         <td>200</td>
-        <td>[] or [{todo1},{todo2},{...}]</td>
+        <td>[] <b>OR</b> [{todo1},{todo2},{...}]</td>
       </tr>
       <tr>
         <td>GET</td>
@@ -87,16 +87,16 @@
         <td>http://localhost:8080/todos/completed</td>
         <td></td>
         <td>200</td>
-        <td>[] or [{todo1},{todo2},{...}]</td>
+        <td>[] <b>OR</b> [{todo1},{todo2},{...}]</td>
       </tr>
       <tr>
         <td>POST</td>
         <td>/todos</td>
         <td>Add a new todo to the todo list</td>
         <td>http://localhost:8080/todos</td>
-        <td>{'name' : 'Buy oatmilk x 2', 'due':'2021-11-20T18:25:43.511Z'}</td>
+        <td>{"name" : "Buy oatmilk x 2", "due":"2021-11-20T18:25:43.511Z"}</td>
         <td>201 (Created), 400 if incorrect data submitted</td>
-        <td>Success <b>OR </b>Incorrect data submitted</td>
+        <td>Success <b>OR</b> Incorrect data submitted</td>
       </tr>
       <tr>
         <td>PATCH</td>
