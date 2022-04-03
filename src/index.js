@@ -31,25 +31,17 @@ app.get("/todos", (_, res) => {
 // Add GET request with path '/todos/overdue'
 app.get("/todos/overdue", (req, res) => {
   let today = new Date();
-  res.write("[");
-  todos.forEach((todo) => {
-    if (Date.parse(todo.due) < today && todo.completed === false) {
-      res.write(JSON.stringify(todo));
-    }
-  });
-  res.write("]");
-  res.end();
+  const overdue = todos.filter(
+    (todo) => Date.parse(todo.due) < today && todo.completed === false
+  );
+  res.write(JSON.stringify(overdue));
+  res.send();
 });
 
 //Add GET request with path '/todos/completed'
 app.get("/todos/completed", (req, res) => {
-  res.write("[");
-  todos.forEach((todo) => {
-    if (todo.completed === true) {
-      res.write(JSON.stringify(todo));
-    }
-  });
-  res.write("]");
+  const complete = todos.filter((todo) => todo.completed === true);
+  res.write(JSON.stringify(complete));
   res.send();
 });
 
